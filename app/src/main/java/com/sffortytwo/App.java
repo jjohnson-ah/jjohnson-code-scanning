@@ -3,6 +3,9 @@
  */
 package com.sffortytwo;
 
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -10,5 +13,10 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        try {
+            DriverManager.getConnection("", "scott", "tiger");
+        } catch (SQLException sqle) {
+            System.out.println("There was an error");
+        }
     }
 }
