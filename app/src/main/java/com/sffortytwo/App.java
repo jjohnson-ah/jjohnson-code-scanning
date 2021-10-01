@@ -22,5 +22,9 @@ public class App {
         } catch (SQLException sqle) {
             System.out.println("There was an error");
         }
+
+        Student student = new Student();
+        student.doSomething();
+
     }
 }
